@@ -44,7 +44,7 @@ class ExtensionsCtrl {
       },
       {
         name: "Code Editor",
-        desc: "A powerful code editor with support for over 120 programming languages.",
+        desc: "Ideal for code snippets and other useful functions that you want to hold on to in your notes.",
         sref: "extensions.code_editor",
         types: ["Standard Notes Extension"]
       }
