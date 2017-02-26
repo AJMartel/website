@@ -77,9 +77,9 @@ class LandingCtrl {
         ]
       },
       {
-        name: "Android (In Development)",
+        name: "Android (Open Beta)",
         icon: "ico-android.png",
-        link: "https://github.com/standardnotes/android"
+        link: "https://play.google.com/apps/testing/org.standardnotes.notes"
       },
     ];
 
