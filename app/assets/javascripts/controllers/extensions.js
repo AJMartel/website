@@ -25,6 +25,12 @@ class ExtensionsCtrl {
         desc: "A blogging extension for Standard Notes. Easily create your own personal blog from your notes.",
         href: "https://github.com/standardnotes/standard-journal",
         types: ["Standard Notes Extension"]
+      },
+      {
+        name: "Realtime Collaborative Editor",
+        desc: "A proof of concept collaborative text editor with end-to-end encryption.",
+        sref: "extensions.collab",
+        types: ["Experimental", "Standard Notes Extension"]
       }
     ]
 
@@ -46,15 +52,6 @@ class ExtensionsCtrl {
         name: "Code Editor",
         desc: "Ideal for code snippets and other useful functions that you want to hold on to in your notes.",
         sref: "extensions.code_editor",
-        types: ["Standard Notes Extension"]
-      }
-    ]
-
-    $scope.experimentalExtensions = [
-      {
-        name: "Realtime Collaborative Editor",
-        desc: "A proof of concept collaborative text editor with end-to-end encryption.",
-        sref: "extensions.collab",
         types: ["Standard Notes Extension"]
       }
     ]
