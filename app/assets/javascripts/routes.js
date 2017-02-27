@@ -89,7 +89,7 @@ angular.module('app.main')
           'content@' : {
             templateUrl: 'templates/extensions/code_editor.html',
             controller: function($scope){
-              $scope.iframeURL = window._ext_server + "/editors/code_demo";
+              $scope.iframeURL = window._staging_app_server + "/?server=https://stagingapi.standardnotes.org&email=code@standardnotes.org&pw=password";
             }
           }
         }
