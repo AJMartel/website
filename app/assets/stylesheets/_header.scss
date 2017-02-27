@@ -1,0 +1,26 @@
+.header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  h1 {
+    border-bottom: 0;
+    font-size: 30px;
+    a {
+      color: black;
+    }
+  }
+
+  .links {
+    padding-top: 5px;
+  }
+
+  .header-link {
+    margin-right: 10px;
+
+    &:after {
+      padding-left: 10px;
+      height: 10px;
+      width: 1px;
+      background-color: red;
+    }
+  }
+}

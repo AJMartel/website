@@ -1,10 +1,18 @@
 .main-ui-view
   %section.main-content
     .header
-      .project-name Standard Notes
       .project-tagline A standard notes app with an un-standard focus on longevity, portability, and privacy.
 
-      .downloads-container.mt-50
+      .features{"style" => "font-size: 20px;"}
+        %p End-to-end encryption
+        %p Custom editors and extensions
+        %p Cross-platform applications and sync
+        %p Data ownership by default
+        %p Architecture and design that ensure longevity and sustainability
+
+
+      %h3{"style" => "margin-top: 30px; font-size: 22px;"} Available for free on:
+      .downloads-container.mt-20
         .download-item{"ng-repeat" => "item in downloads"}
           %a.content-link{"href" => "{{item.link}}", "target" => "_blank"}
             .icon

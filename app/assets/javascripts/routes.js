@@ -4,6 +4,11 @@ angular.module('app.main')
     $stateProvider
       .state('base', {
         abstract: true,
+        views: {
+          header: {
+            templateUrl: 'templates/shared/header.html',
+          }
+        }
       })
 
       .state('landing', {
@@ -19,6 +24,7 @@ angular.module('app.main')
 
       .state('extensions', {
         url: '/extensions',
+        parent: 'base',
         views: {
           'content@' : {
             templateUrl: 'templates/extensions/extensions.html',
@@ -27,23 +33,11 @@ angular.module('app.main')
         }
       })
 
-      // DEPRACATED
-      // .state('extensions.dropbox', {
-      //   url: '/dropbox?secret_url',
-      //   views: {
-      //     'content@' : {
-      //       templateUrl: 'templates/extensions/dropbox.html',
-      //       controller: 'DropboxCtrl'
-      //     }
-      //   }
-      // })
-
       .state('extensions.history', {
         url: '/revision-history',
         views: {
           'content@' : {
             templateUrl: 'templates/extensions/revisions.html',
-            // controller: 'RevisionsExtCtrl'
           }
         }
       })
@@ -106,6 +100,7 @@ angular.module('app.main')
       })
 
       .state('tools', {
+        parent: 'base',
         url: '/tools',
         views: {
           'content@' : {
@@ -116,20 +111,11 @@ angular.module('app.main')
       })
 
       .state('developers', {
+        parent: 'base',
         url: '/developers',
         views: {
           'content@' : {
             templateUrl: 'templates/developers.html'
-          }
-        }
-      })
-
-      .state('producers', {
-        url: '/producers',
-        views: {
-          'content@' : {
-            templateUrl: 'templates/producers.html',
-            // controller: 'ProCtrl'
           }
         }
       })

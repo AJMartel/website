@@ -12,8 +12,8 @@
     flex-direction: column;
     flex: 1 1 auto;
 
-    min-height: 200px;
-    min-width: 350px;
+    min-height: 170px;
+    min-width: 200px;
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.2);
     margin-bottom: 15px;
@@ -29,23 +29,25 @@
       display: block;
       @extend .center;
       @extend .center-align;
-      max-width: 80px;
+      max-width: 50px;
       margin-bottom: 20px;
     }
 
     .links {
       display: block;
       a.link {
+        display: block;
         color: black;
         font-weight: bold;
         text-decoration: underline;
         cursor: pointer;
+        text-align: center;
 
         &.screenshot-link {
           text-decoration: none;
-          border-left: 1px solid black;
-          padding-left: 10px;
-          margin-left: 10px;
+          // border-left: 1px solid black;
+          // padding-left: 10px;
+          // margin-left: 10px;
         }
 
         &.na {
@@ -180,7 +182,7 @@
   position: relative;
   max-width: 620px;
   margin-bottom: 40px;
-  margin-top: 60px;
+  margin-top: 20px;
 
   @media (min-width: 1300px) {
     position: fixed;
