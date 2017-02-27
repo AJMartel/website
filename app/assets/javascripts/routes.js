@@ -77,7 +77,7 @@ angular.module('app.main')
           'content@' : {
             templateUrl: 'templates/extensions/advanced_markdown.html',
             controller: function($scope){
-              $scope.iframeURL = window._ext_server + "/editors/advanced_markdown_demo";
+              $scope.iframeURL = window._staging_app_server + "/?server=https://stagingapi.standardnotes.org&email=md@standardnotes.org&pw=password";
             }
           }
         }
