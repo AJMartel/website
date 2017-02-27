@@ -2,7 +2,6 @@ class LandingCtrl {
   constructor($rootScope, $scope, $timeout) {
 
     $scope.displayData = {};
-    let currentDesktopVersion = "0.2.5";
 
     document.onkeydown = function(e) {
       $timeout(function(){
@@ -43,7 +42,7 @@ class LandingCtrl {
       {
         name: "Mac",
         icon: "ico-apple.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.5/standard-notes-0.2.5-mac.zip",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.6/standard-notes-0.2.6-mac.zip",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/mac/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/mac/jpg/2.jpg",
@@ -55,7 +54,7 @@ class LandingCtrl {
       {
         name: "Windows",
         icon: "ico-windows.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.5/standard-notes-Setup-0.2.5.exe",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.6/standard-notes-Setup-0.2.6.exe",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/2.jpg",
@@ -67,7 +66,7 @@ class LandingCtrl {
       {
         name: "Linux",
         icon: "ico-linux.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.5/standard-notes-0.2.5-x86_64.AppImage",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.6/standard-notes-0.2.6-x86_64.AppImage",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/2.jpg",
