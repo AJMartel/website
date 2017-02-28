@@ -16,14 +16,6 @@
           %img{"ng-src" => "assets/{{item.icon}}"}
         .links
           %a.link{"href" => "{{item.link}}", "target" => "_blank"} {{item.name}}
-          -# %a.link.normal.screenshot-link.faded{"ng-if" => "item.screenshots.length > 0", "ng-click" => "clickedScreenshots(item)"} Screenshots
-
-    -# .screenshots{"ng-if" => "displayData.screenshot", "ng-click" => "displayData.screenshot = null"}
-    -#   .arrow.left-arrow{"ng-click" => "previousScreenshot($event)", "ng-class" => "hasPreviousScreenshot() ? '' : 'disabled'"} ➞
-    -#   .content
-    -#     .screenshot.center.center-align
-    -#       %img.image.shadow-image{"ng-src" => "{{displayData.screenshot}}"}
-    -#   .arrow.right-arrow{"ng-click" => "nextScreenshot($event)", "ng-class" => "hasNextScreenshot() ? '' : 'disabled'"} ➞
 
   %h2.mt-40 We're built on different principles:
   .principles.mt-30
@@ -89,7 +81,10 @@
 
   %h2.mt-40 Your Data
 
-  %p Standard Notes provides you with a notes service, but your data isn't owned by us. Instead, it's hosted through Standard File either through free hosting from us, a community server, or using your own private server.
+  %p
+    Standard Notes provides you with a notes service, but your data isn't owned by us. Instead, it's hosted through
+    %a{"href" => "https://standardfile.org"} Standard File
+    either through free hosting from us, a community server, or using your own private server.
 
   %p We offer forever-free, encrypted hosting, and this is what all our apps default to when you register. (You'll see this as <em>https://n3.standardnotes.org</em>)
 
