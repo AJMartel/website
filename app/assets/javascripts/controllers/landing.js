@@ -3,6 +3,8 @@ class LandingCtrl {
 
     $scope.displayData = {};
 
+    $scope.demoUrl = window._staging_app_server + "/?server=https://stagingapi.standardnotes.org&email=general@standardnotes.org&pw=password";
+
     document.onkeydown = function(e) {
       $timeout(function(){
         if (e.keyCode == '37') {
