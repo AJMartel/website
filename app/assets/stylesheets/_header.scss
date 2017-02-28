@@ -1,26 +1,40 @@
 .header {
-  margin-bottom: 0 !important;
+  margin-bottom: 50px !important;
   padding-bottom: 0 !important;
+  
+
+  @include MQ-SmallAndLess() {
+    margin-bottom: 20px !important;
+  }
+
   h1 {
     border-bottom: 0;
-    font-size: 30px;
+    font-size: 34px;
+    margin: 0;
     a {
       color: black;
     }
   }
 
-  .links {
-    padding-top: 5px;
+  .header-links {
+    float: right;
+    padding-top: 15px;
+
+    @include MQ-Small() {
+      float: none;
+      clear: left;
+      padding-top: 0px;
+    }
+
+    @include MQ-Xsmall() {
+      float: none;
+      clear: left;
+      padding-top: 0px;
+    }
+
   }
 
   .header-link {
     margin-right: 10px;
-
-    &:after {
-      padding-left: 10px;
-      height: 10px;
-      width: 1px;
-      background-color: red;
-    }
   }
 }

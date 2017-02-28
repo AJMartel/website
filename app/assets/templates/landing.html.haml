@@ -1,58 +1,159 @@
-.main-ui-view
-  %section.main-content
-    .header
-      .project-tagline A standard notes app with an un-standard focus on longevity, portability, and privacy.
+%section
+  .tagline A good place for your notes. Standard Notes is the future of what a notes app might look like.
 
-      .features{"style" => "font-size: 20px;"}
-        %p End-to-end encryption
-        %p Custom editors and extensions
-        %p Cross-platform applications and sync
-        %p Data ownership by default
-        %p Architecture and design that maximize longevity and sustainability
+  .features
+    %p End-to-end encryption
+    %p Custom editors and extensions
+    %p Cross-platform applications and sync
+    %p Data ownership by default
+    %p Architecture and design that maximize longevity and sustainability
 
-      %h3
-        Want to try it out?
-        %a{"href" => "{{demoUrl}}"} Check out the live demo.
-      %h3{"style" => "margin-top: 30px; font-size: 22px;"} Available for free on:
-      .downloads-container.mt-20
-        .download-item{"ng-repeat" => "item in downloads"}
-          %a.content-link{"href" => "{{item.link}}", "target" => "_blank"}
-            .icon
-              %img{"ng-src" => "assets/{{item.icon}}"}
-            .links
-              %a.link{"href" => "{{item.link}}", "target" => "_blank"} {{item.name}}
-              %a.link.normal.screenshot-link.faded{"ng-if" => "item.screenshots.length > 0", "ng-click" => "clickedScreenshots(item)"} Screenshots
+  %h3{"style" => "margin-top: 30px; font-size: 22px;"} It's available for free on:
+  .downloads-container.mt-20
+    .download-item{"ng-repeat" => "item in downloads"}
+      %a.content-link{"href" => "{{item.link}}", "target" => "_blank"}
+        .icon
+          %img{"ng-src" => "assets/{{item.icon}}"}
+        .links
+          %a.link{"href" => "{{item.link}}", "target" => "_blank"} {{item.name}}
+          -# %a.link.normal.screenshot-link.faded{"ng-if" => "item.screenshots.length > 0", "ng-click" => "clickedScreenshots(item)"} Screenshots
 
-        .screenshots{"ng-if" => "displayData.screenshot", "ng-click" => "displayData.screenshot = null"}
-          .arrow.left-arrow{"ng-click" => "previousScreenshot($event)", "ng-class" => "hasPreviousScreenshot() ? '' : 'disabled'"} ➞
-          .content
-            .screenshot.center.center-align
-              %img.image.shadow-image{"ng-src" => "{{displayData.screenshot}}"}
-          .arrow.right-arrow{"ng-click" => "nextScreenshot($event)", "ng-class" => "hasNextScreenshot() ? '' : 'disabled'"} ➞
+    -# .screenshots{"ng-if" => "displayData.screenshot", "ng-click" => "displayData.screenshot = null"}
+    -#   .arrow.left-arrow{"ng-click" => "previousScreenshot($event)", "ng-class" => "hasPreviousScreenshot() ? '' : 'disabled'"} ➞
+    -#   .content
+    -#     .screenshot.center.center-align
+    -#       %img.image.shadow-image{"ng-src" => "{{displayData.screenshot}}"}
+    -#   .arrow.right-arrow{"ng-click" => "nextScreenshot($event)", "ng-class" => "hasNextScreenshot() ? '' : 'disabled'"} ➞
+
+  %h2.mt-40 We're built on different principles:
+  .principles.mt-30
+    %ol
+      %li
+        %strong Complexity in software decreases its chances of survival.
+        Notes are the most important part of our existence.
+        They should last as long as we do. We favor longevity and sustainability over excessive features and endless growth.
+      %li
+        %strong A notes app should be customizable.
+        It is not possible for one notes app to anticpiate everyone's needs and wants.
+        Our applications start simple, and can be extended with 3rd party extensions and editors that allow you to choose how you'd like to write.
+      %li
+        %strong A notes company does not need to meddle with my data to provide me with a notes service.
+        We believe in a separation of concerns between our service and your data. That's why we built Standard File, a simple data format and storage method
+        that encrypts and backs up your data to multiple locations, and also offers extensions.
 
 
-      .email-subscribe-wrapper
-        .content
-          .title Stay up to date with Standard Notes releases and news.
-          .subtitle Subscribe to Standard Notes announcements.
-          %link{:href => "//cdn-images.mailchimp.com/embedcode/slim-10_7.css", :rel => "stylesheet", :type => "text/css"}/
-          :css
-            #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width: 100%;}
-          #mc_embed_signup
-            %form#mc-embedded-subscribe-form.validate{:action => "//standardnotes.us14.list-manage.com/subscribe/post?u=f703bdd7fd7cd0923a94b3bd3&id=8523dd24a8", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-              #mc_embed_signup_scroll
-                %input#mce-EMAIL.email{:name => "EMAIL", :placeholder => "email address", :required => "", :type => "email", :value => ""}
-                / real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                %div{"aria-hidden" => "true", :style => "position: absolute; left: -5000px;"}
-                  %input{:name => "b_f703bdd7fd7cd0923a94b3bd3_8523dd24a8", :tabindex => "-1", :type => "text", :value => ""}/
-                .clear
-                  %input#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}
-          .social
-            %a.icon-twitter{"href" => "https://twitter.com/standardnotes", "target" => "_blank"}
-            %a.icon-github{"href" => "https://github.com/standardnotes", "target" => "_blank"}
-            %a.icon-reddit{"href" => "https://www.reddit.com/r/StandardNotes/", "target" => "_blank"}
+  %h3
+    Want to try it out?
+    %a{"href" => "{{demoUrl}}"} Check out a live demo of the web app.
 
-    %ng-include{"src" => "'doc/spec.html'"}
 
-    %h1 Credits
-    %ng-include{"src" => "'templates/producers_list.html'"}
+  %ng-include{"src" => "'templates/email_subscribe.html'"}
+
+  %hr
+
+  %h2.mt-40 The Apps
+
+  %p We're focused on making sure our apps remain stable and survive for decades without issue. That's no easy feat. Our advantage is staying as small as possible.
+
+  %p For the most part, this is what our app will forever be:
+
+  %ol
+    %li.bold Notes with a title, text, and tags.
+    %li.bold Search bar for quickly finding a note
+    %li.bold Easy importing and exporting of all your data
+
+  %p.mt-40 For everything else, there's Extensions.
+
+  %hr
+
+  %h2.mt-40 Extensions
+
+  %p
+    %em There are a million and one ways to write notes — who are we to choose?
+  %p Our main desktop and web app allow for custom extensions and editors, such as:
+  %ul.boxed-ul
+    %li.bold
+      %a{"href" => "/extensions"} Markdown Editor
+    %li.bold
+      %a{"href" => "/extensions"} Code Editor
+    %li.bold
+      %a{"href" => "/extensions"} Dropbox Sync
+    %li.bold
+      %a{"href" => "/extensions"} Note Revision History
+    %li.bold
+      %a{"href" => "/extensions"} File Attachments
+
+  %p Our mobile apps, iOS and Android, are more standard-form applications, and focus on allowing you to access and edit your data from anywhere, and do not offer custom extensions and editors. Whether this will change in the future remains to be seen.
+
+  %hr
+
+  %h2.mt-40 Your Data
+
+  %p Standard Notes provides you with a notes service, but your data isn't owned by us. Instead, it's hosted through Standard File either through free hosting from us, a community server, or using your own private server.
+
+  %p We offer forever-free, encrypted hosting, and this is what all our apps default to when you register. (You'll see this as <em>https://n3.standardnotes.org</em>)
+
+  %hr
+
+  %h2.mt-40 Open Source
+  %p
+    Everything, from our apps to this website, is
+    %a{"href" => "https://github.com/standardnotes"} open source.
+    This is essential to transparency, and making sure our code is auditable by anyone.
+
+  %p This also makes it so that you don't have to be completely dependent on us for your notes: open source means that Standard Notes can continue to survive even if our entire team got run over by a bus.
+
+  %h3 Developers
+  %a{"href" => "/developers"} See the developer resources page.
+
+  %hr
+
+  %h2.mt-40 FAQ
+
+  %ul.no-bullet
+    %li
+      %strong What information does Standard Notes collect about me?
+      %p As little as possible, if at all. Our apps do not use any data analytics or tracking libraries like Google Analytics, which track your behavior online and sell it to advertisers. Also, we'll never require you to agree to a lengthy terms of service.
+    %li
+      %strong How does Standard Notes make money?
+      %p
+        We currently offer the
+        %a{"href" => "/extended"} Standard Notes Extended
+        subscription, which provides members with benefits such as Advanced Extensions (like the Note History extension and the Advanced Markdown Editor) and priority support with setting up a personal Standard Notes/Standard File server or Standard Notes based personal blog.
+
+    %li
+      %strong How do you know you'll be here for a while?
+      %p Software is difficult to maintain due to an endlessly growing feature set that constantly introduces bugs and stability issues. Because we're "freezing" our feature set as-is, only minimal maintenance work is required every year. While this is still work, it's far more manageable than typical software projects that aim to grow and grow every year. We're also not interested in "scaling", so our costs will remain low, allowing us to sustain these applications for an extended period of time, if not indefinitely.
+
+    %li
+      %strong How can I get involved?
+      %p We love community contributions. If you're a notes-enthusiast, share with your friends and followers, and help create a more sustainable notes environment.
+
+      %p
+        If you're a developer, check out our
+        %a{"href" => "https://github.com/standardnotes"} repositories on Github
+        and see where you can help, as well as our
+        %a{"href" => "/developers"} developer resources page.
+
+      %p
+        You can also host your own Standard File server for other community members to use and join.
+        If you launch your own community server,
+        %a{"href" => "mailto:hello@standardnotes.org"} let us know.
+
+      %p
+        Come join
+        %a{"href" => "https://slackin-ekhdyygaer.now.sh/"} our Slack group.
+    %li
+      %strong How can I get in touch?
+      %p
+        You can follow us on
+        %a{"href" => "https://twitter.com/standardnotes"} Twitter
+        for updates and announcements. Or say hello at
+        %a{"href" => "mailto:hello@standardnotes.org"} hello@standardnotes.org.
+
+  %ng-include{"src" => "'doc/spec.html'"}
+
+  %hr
+
+  %h2.mt-40 Credits
+  %ng-include{"src" => "'templates/producers_list.html'"}

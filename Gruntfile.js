@@ -19,14 +19,6 @@ module.exports = function(grunt) {
         },
       },
 
-      markdown: {
-        files: ['app/assets/doc/**/*.md'],
-        tasks: ['markdown', 'ngtemplates', 'concat', 'ngAnnotate'],
-        options: {
-          spawn: false,
-        },
-      },
-
       css: {
         files: ['app/assets/stylesheets/**/*.scss'],
         tasks: ['sass'],
@@ -59,35 +51,6 @@ module.exports = function(grunt) {
         }
       },
     },
-
-    markdown: {
-      all: {
-        files: [
-          {
-            expand: true,
-            src: 'app/assets/doc/*.md',
-            dest: 'app/assets/templates/generated/',
-            ext: '.html'
-          }
-        ],
-
-        options: {
-         templateContext: {},
-         contextBinder: true,
-         contextBinderMark: '@@@',
-         autoTemplate: false,
-         autoTemplateFormat: 'jst',
-         markdownOptions: {
-           gfm: true,
-           highlight: 'manual',
-           codeLines: {
-             before: '<span>',
-             after: '</span>'
-           }
-         }
-       }
-     }
-   },
 
     ngtemplates:  {
       templates: {
@@ -182,10 +145,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-markdown');
 
   grunt.registerTask('default', [
-    'haml', 'markdown', 'ngtemplates', 'sass', 'concat:app', 'babel', 'browserify',
+    'haml', 'ngtemplates', 'sass', 'concat:app', 'babel', 'browserify',
     'concat:lib', 'concat:dist', 'ngAnnotate', 'uglify'
   ]);
 };
