@@ -39,15 +39,12 @@
         display: block;
         color: black;
         font-weight: bold;
-        text-decoration: underline;
+        text-decoration: none;
         cursor: pointer;
         text-align: center;
 
         &.screenshot-link {
-          text-decoration: none;
-          // border-left: 1px solid black;
-          // padding-left: 10px;
-          // margin-left: 10px;
+          // text-decoration: underline;
         }
 
         &.na {
@@ -65,6 +62,7 @@
 
         &:hover {
           color: $blue-color;
+          text-decoration: underline;
         }
       }
     }
@@ -150,7 +148,8 @@
 
     .title {
       font-weight: bold;
-      line-height: 20px;
+      font-size: 18px;
+      line-height: 22px;
     }
 
     .subtitle {
@@ -180,7 +179,7 @@
   }
 
   position: relative;
-  max-width: 620px;
+  // max-width: 620px;
   margin-bottom: 40px;
   margin-top: 20px;
 
