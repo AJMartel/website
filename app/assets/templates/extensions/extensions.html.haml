@@ -3,18 +3,18 @@
 
   %p Extensions allow you to plug 3rd party services into your Standard Notes experience.
 
-  %p Anyone can build their own extension. You install an extension via a unique URL that you receive from your extension provider.
-
+  %hr
   %h2 Standard Extensions
   .col-container{"style" => "display: flex; flex-wrap: wrap;"}
     .white-bg.col-45.mb-10.mr-10.inline.large-padding.relative{"ng-repeat" => "ext in freeExtensions", "style" => "min-height: 200px; flex: 1 0 auto; min-width: 250px; max-width: 410px;"}
       %h3.name.bold.no-margin {{ext.name}}
-      .faded.medium{"ng-repeat" => "type in ext.types", "style" => "margin-top: -1px;"}
+      .faded{"ng-repeat" => "type in ext.types", "style" => "margin-top: -1px;"}
         {{type}}
       %p {{ext.desc}}
       %a.absolute{"ng-if" => "ext.sref", "ui-sref" => "{{ext.sref}}", "style" => "bottom: 12px;"} Get
       %a.absolute{"ng-if" => "ext.href", "href" => "{{ext.href}}", "style" => "bottom: 12px;"} Get
 
+  %hr
   %h2 Advanced Extensions
   %p
     Advanced extensions are available as part of the
@@ -23,7 +23,7 @@
   .col-container{"style" => "display: flex; flex-wrap: wrap;"}
     .white-bg.col-45.mb-10.mr-10.inline.large-padding.relative{"ng-repeat" => "ext in proExtensions", "style" => "min-height: 200px; flex: 1 0 auto; min-width: 250px; max-width: 410px;"}
       %h3.name.bold.no-margin {{ext.name}}
-      .faded.medium{"ng-repeat" => "type in ext.types", "style" => "margin-top: -1px;"}
+      .faded{"ng-repeat" => "type in ext.types", "style" => "margin-top: -1px;"}
         {{type}}
       %p {{ext.desc}}
       %a.absolute{"ng-if" => "ext.sref", "ui-sref" => "{{ext.sref}}", "style" => "bottom: 12px;"} Get
@@ -34,12 +34,11 @@
     For importing from Evernote and other services, see the
     %a{"ui-sref" => "tools"} Tools page.
 
-  %h1 About Extensions
+  %hr
+  %h2 About Extensions
   %p
-    Because our focus is to make your data survive for as long as possible, we had to design our system differently.
+    Because our focus is making your data survive for as long as possible, we had to design our system differently.
     We aim to keep a separation of concerns between your data and our notes app. Your data is owned by you, not us, on your Standard File account.
-    Standard File is not an entity, nor is it a product — it's a way of structuring and encrypting data that anyone can use and build on. Standard Notes on the other hand <em>is</em>
-    an entity. However, our system is designed such that your data does not depend on us to survive.
 
   %p Both Standard Notes and Standard File have their own extensions.
 
