@@ -52,7 +52,7 @@ class ProCtrl {
         handler.open({
           name: 'Standard Notes Extended',
           description: 'Subscription',
-          amount: 1500
+          amount: 3000
         });
       })
     }

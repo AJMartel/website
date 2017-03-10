@@ -10,7 +10,7 @@ class SubscriptionsController < ApplicationController
   }
 
   def create
-    @amount = 1500 # Amount in cents
+    @amount = 3000 # Amount in cents
 
     token_type = params[:token_type]
     if token_type == "source_bitcoin"
@@ -42,7 +42,7 @@ class SubscriptionsController < ApplicationController
       customer = Stripe::Customer.create(
         :email => params[:email],
         :source  => params[:token],
-        :plan => "3",
+        :plan => "2",
       )
 
       if customer
