@@ -40,6 +40,7 @@ class BaseCtrl {
       {name: "Mat Schulte", link: "https://twitter.com/text_is_life"},
       {name: "Noel Quiles", link: "https://noelquiles.com"},
       {name: "Frederick Doe", link: "#"},
+      {name: "Donnie West", link: "https://donniewest.com"},
     ]);
 
     function shuffle(array) {
