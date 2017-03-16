@@ -44,7 +44,7 @@ class LandingCtrl {
       {
         name: "Mac",
         icon: "ico-apple.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.9/standard-notes-0.2.9-mac.zip",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.3.0/standard-notes-0.3.0-mac.zip",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/mac/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/mac/jpg/2.jpg",
@@ -56,7 +56,7 @@ class LandingCtrl {
       {
         name: "Windows",
         icon: "ico-windows.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.9/standard-notes-Setup-0.2.9.exe",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.3.0/standard-notes-Setup-0.3.0.exe",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/2.jpg",
@@ -68,7 +68,7 @@ class LandingCtrl {
       {
         name: "Linux",
         icon: "ico-linux.png",
-        link: "https://github.com/standardnotes/desktop/releases/download/v0.2.9/standard-notes-0.2.9-x86_64.AppImage",
+        link: "https://github.com/standardnotes/desktop/releases/download/v0.3.0/standard-notes-0.3.0-x86_64.AppImage",
         screenshots: [
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/1.jpg",
           "https://s3.amazonaws.com/standard-notes/screenshots/desktop/jpg/2.jpg",
