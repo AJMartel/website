@@ -33,6 +33,15 @@ angular.module('app.main')
         }
       })
 
+      .state('extensions.themes', {
+        url: '/themes',
+        views: {
+          'content@' : {
+            templateUrl: 'templates/extensions/themes.html',
+          }
+        }
+      })
+
       .state('extensions.history', {
         url: '/revision-history',
         views: {
