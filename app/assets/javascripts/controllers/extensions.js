@@ -31,6 +31,12 @@ class ExtensionsCtrl {
         desc: "A proof of concept collaborative text editor with end-to-end encryption.",
         sref: "extensions.collab",
         types: ["Experimental", "Standard Notes Extension"]
+      },
+      {
+        name: "Dark Blue",
+        desc: "A night time theme for Standard Notes Desktop.",
+        sref: "extensions.themes",
+        types: ["Desktop Theme"]
       }
     ]
 

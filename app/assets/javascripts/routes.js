@@ -22,6 +22,17 @@ angular.module('app.main')
         }
       })
 
+      .state('help', {
+        url: '/help',
+        parent: 'base',
+        views: {
+          'content@' : {
+            templateUrl: 'templates/help.html',
+            // controller: 'HelpCtrl'
+          }
+        }
+      })
+
       .state('extensions', {
         url: '/extensions',
         parent: 'base',
