@@ -162,6 +162,19 @@ angular.module('app.main')
       })
 
       // 404 Error
+      .state('slack', {
+        parent: 'base',
+        url: '/slack',
+        views: {
+          'content@' : {
+            controller: function($scope){
+              window.location.href = window._slack_url;
+            }
+          }
+        }
+      })
+
+      // 404 Error
       .state('404', {
         parent: 'base',
         views: {
