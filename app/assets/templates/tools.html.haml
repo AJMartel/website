@@ -12,6 +12,16 @@
   %p{"ng-if" => "evernoteConversionComplete"}
     Your Standard Notes import file is now downloading. Use the Standard Notes
     %a{"href" => "https://app.standardnotes.org", "target" => "_blank"} web app
-    to import your newly converted notes.
+    or desktop app to import your newly converted notes.
+
+  %h2 Plaintext to Standard Notes Converter
+  %p Use this tool to convert multiple plaintext files, including .md files, to a Standard Notes import format.
+  %label
+    %input{"type" => "file", "multiple" => "true", "style" => "", "file-change" => "->", "handler" => "importPlaintextSelected(files)"}
+  %p{"ng-if" => "plaintextConversionComplete"}
+    Your Standard Notes import file is now downloading. Use the Standard Notes
+    %a{"href" => "https://app.standardnotes.org", "target" => "_blank"} web app
+    or desktop app to import your newly converted notes.
+
   .footer
     %hr

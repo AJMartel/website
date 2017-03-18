@@ -25,6 +25,12 @@ class ExtensionsCtrl {
         desc: "A blogging extension for Standard Notes. Easily create your own personal blog from your notes.",
         href: "https://github.com/standardnotes/standard-journal",
         types: ["Standard Notes Extension"]
+      },
+      {
+        name: "Realtime Collaborative Editor",
+        desc: "A proof of concept collaborative text editor with end-to-end encryption.",
+        sref: "extensions.collab",
+        types: ["Experimental", "Standard Notes Extension"]
       }
     ]
 
