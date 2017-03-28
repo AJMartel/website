@@ -10,54 +10,32 @@ class SubscriptionsController < ApplicationController
   }
 
   def create
-    @amount = 3000 # Amount in cents
+    @amount = params[:amount] # Amount in cents
 
     token_type = params[:token_type]
-    if token_type == "source_bitcoin"
 
-      customer = Stripe::Customer.create(
-        :email => params[:email],
-        :source => params[:token]
-      )
+    customer = Stripe::Customer.create(
+      :email => params[:email],
+      :source => params[:token]
+    )
 
-      charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount => @amount,
-        :currency => "usd",
-        :source => params[:token],
-        :description => params[:email]
-      )
+    charge = Stripe::Charge.create(
+      :customer => customer.id,
+      :amount => @amount,
+      :currency => "usd",
+      :description => params[:email]
+    )
 
-      if customer && charge
-        @subscription = current_user.build_subscription
-        current_user.stripe_id = customer.id
-        @subscription.payment_type = "bitcoin"
-        @subscription.save
-        current_user.save
-        render :json => @subscription
-      else
-        render :json => {:error => {:message => "There was an error processing your payment. Please try again."}}, :status => 500
-      end
+    if customer && charge
+      @subscription = current_user.build_subscription
+      @subscription.pay_amount = @amount
+      current_user.stripe_id = customer.id
+      @subscription.payment_type = token_type == "source_bitcoin" ? "bitcoin" : "credit_card"
+      @subscription.save
+      current_user.save
+      render :json => @subscription
     else
-      customer = Stripe::Customer.create(
-        :email => params[:email],
-        :source  => params[:token],
-        :plan => "2",
-      )
-
-      if customer
-        current_user.stripe_id = customer.id
-        @subscription = current_user.build_subscription
-        subscription_data = customer.subscriptions.data[0]
-        @subscription.stripe_id = subscription_data.id
-        @subscription.stripe_name = subscription_data.plan.name
-        @subscription.payment_type = "credit_card"
-        @subscription.save
-        current_user.save
-        render :json => @subscription
-      else
-        render :json => {:error => {:message => "There was an error processing your payment. Please try again."}}, :status => 500
-      end
+      render :json => {:error => {:message => "There was an error processing your payment. Please try again."}}, :status => 500
     end
   end
 

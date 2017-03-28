@@ -3,6 +3,11 @@ class ProCtrl {
 
     $scope.formData = {};
 
+
+    $scope.presetAmountSelected = function() {
+      $scope.formData.payOtherAmount = null;
+    }
+
     $scope.submitEmail = function() {
       var request = Restangular.one("pro_users");
       request.email = $scope.formData.email;
@@ -38,6 +43,12 @@ class ProCtrl {
       }
     }
 
+    $scope.getPayAmount = function() {
+      var amount = $scope.formData.payOtherAmount > 0 ? $scope.formData.payOtherAmount : $scope.formData.payAmount;
+      amount *= 100;
+      return amount;
+    }
+
     $scope.purchaseSubscription = function() {
       loadStripe(function(){
         var handler = StripeCheckout.configure({
@@ -52,7 +63,7 @@ class ProCtrl {
         handler.open({
           name: 'Standard Notes Extended',
           description: 'Subscription',
-          amount: 3000
+          amount: $scope.getPayAmount()
         });
       })
     }
@@ -68,6 +79,8 @@ class ProCtrl {
        request.email = stripeToken.email;
        request.token_type = stripeToken.type;
       }
+
+      request.amount = $scope.getPayAmount();
 
       request.post()
       .then(function(response){
