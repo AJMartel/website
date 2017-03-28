@@ -4,19 +4,41 @@
   %p.bold Benefits:
   %ul
     %li
-      Access to all advanced extensions, current and future.
-      %a{"ui-sref" => "extensions"} (See full list here)
+      Access to all advanced extensions, current and future, for 1 year. When the year is up, you can choose to come back and renew based on whatever price you choose.
+      %a{"ui-sref" => "extensions"} (See full extension list here)
     %li
       Priority support, including 1-on-1 technical assistance with setting up your own Standard Notes/Standard File server (for maximum privacy)
       and help with setting up your own
       %a{"href" => "https://github.com/standardnotes/standard-journal"} Standard Journal blog,
       which you publish to directly from Standard Notes.
     %li
-      Support Standard Note's mission for privacy and longevity in software.
+      Support Standard Notes' mission for privacy and longevity in software.
 
-  %h2.inline.mr-20 $30/year
-  %button.black.inline{"ng-click" => "formData.showEmailForm = true", "ng-if" => "!formData.showEmailForm"} Subscribe
-  %a.inline{"ng-if" => "!formData.showEmailForm", "ng-click" => "formData.showEmailForm = true", "style" => "margin-left: 10px; cursor: pointer;"} Login
+  %p.bold.mt-50 Extended is offered on the pay-as-you-feel principle.
+  %p This allows us to offer Extended to many people with varying financial situations.
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 5", "ng-value" => "5", "ng-change" => "presetAmountSelected()"}
+    $5
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 10", "ng-value" => "10", "ng-change" => "presetAmountSelected()"}
+    $10
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 15", "ng-value" => "15", "ng-change" => "presetAmountSelected()"}
+    $15
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 20", "ng-value" => "20", "ng-change" => "presetAmountSelected()"}
+    $25
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 30", "ng-value" => "30", "ng-change" => "presetAmountSelected()"}
+    $30 (recommended)
+  %label.mr-10
+    %input{"type" => "radio", "ng-checked" => "formData.payOtherAmount"}
+    Other
+    %input.form-control{"type" => "number", "placeholder" => "$", "ng-model" => "formData.payOtherAmount", "ng-change" => "formData.payAmount = 0"}
+
+  %button.black.inline.mt-10{"ng-click" => "formData.showEmailForm = true", "ng-if" => "!formData.showEmailForm"} Subscribe
+  %a{"ng-if" => "!formData.showEmailForm", "ng-click" => "formData.showEmailForm = true", "style" => "margin-left: 10px; cursor: pointer;"} Login
+
   .mt-10{"ng-if" => "formData.showEmailForm"}
     %input.form-control.inline.top{"type" => "email", "ng-model" => "formData.email", "placeholder" => "Enter your email address", "style" => "height: 39px;"}
     %button.black.inline.top{"ng-click" => "submitEmail()"} Continue

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212152031) do
+ActiveRecord::Schema.define(version: 20170328164351) do
 
   create_table "extension_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email"
@@ -39,9 +39,10 @@ ActiveRecord::Schema.define(version: 20170212152031) do
     t.integer  "pro_user_id"
     t.string   "payment_type"
     t.datetime "active_until"
-    t.boolean  "canceled",     default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "canceled",                    default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.decimal  "pay_amount",   precision: 10
   end
 
 end
