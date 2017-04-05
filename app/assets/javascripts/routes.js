@@ -179,7 +179,8 @@ angular.module('app.main')
         parent: 'base',
         views: {
           'content@' : {
-            templateUrl: 'errors/404.html'
+            templateUrl: 'templates/landing.html',
+            controller: 'LandingCtrl'
           }
         }
       });
