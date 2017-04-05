@@ -78,9 +78,9 @@ class LandingCtrl {
         ]
       },
       {
-        name: "Android (Open Beta)",
+        name: "Android",
         icon: "ico-android.png",
-        link: "https://play.google.com/apps/testing/org.standardnotes.notes"
+        link: "https://play.google.com/store/apps/details?id=org.standardnotes.notes"
       },
     ];
 

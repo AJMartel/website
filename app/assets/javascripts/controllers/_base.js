@@ -41,6 +41,13 @@ class BaseCtrl {
       {name: "Noel Quiles", link: "https://noelquiles.com"},
       {name: "Frederick Doe", link: "#"},
       {name: "Donnie West", link: "https://donniewest.com"},
+      {name: "Dan Janosik", link: "https://danjanosik.com"},
+      {name: "Stefan Thon", link: "https://twitter.com/smuemd"},
+      {name: "Andrew Romanov", link: "http://andrew-r.ru/"},
+      {name: "Williams Melgar", link: "https://wmelgar.com"},
+      {name: "Justin Shelton", link: "http://mightynorthmedia.com/"},
+      {name: "Tim Deasy", link: "http://tdeasy.com/"},
+      {name: "Justin Levens", link: "https://justinlevens.us"}
     ]);
 
     function shuffle(array) {
