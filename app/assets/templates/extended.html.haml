@@ -17,17 +17,11 @@
   %p.bold.mt-50 Extended is offered on the pay-as-you-feel principle.
   %p This allows us to offer Extended to many people with varying financial situations.
   %label.mr-10
-    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 5", "ng-value" => "5", "ng-change" => "presetAmountSelected()"}
-    $5
-  %label.mr-10
     %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 10", "ng-value" => "10", "ng-change" => "presetAmountSelected()"}
     $10
   %label.mr-10
     %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 15", "ng-value" => "15", "ng-change" => "presetAmountSelected()"}
     $15
-  %label.mr-10
-    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 20", "ng-value" => "20", "ng-change" => "presetAmountSelected()"}
-    $25
   %label.mr-10
     %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 30", "ng-value" => "30", "ng-change" => "presetAmountSelected()"}
     $30 (recommended)
@@ -50,6 +44,19 @@
 
   %p
     %em Credit cards and Bitcoin accepted. Powered by Stripe.
+
+  %hr
+  %p.bold Pay with Social Post
+  %p
+    If you don't have any financial means, you can help support the project by posting about it on Twitter, Facebook, or other social networks. In exchange, we'll give you 3 months of access to Extended.
+    You need to have at least 200 followers/friends.
+  %a.block{"ng-if" => "!formData.payWithSocial", "ng-click" => "formData.payWithSocial = true", "href" => "#"} Pay with Social Post
+  %div{"ng-if" => "formData.payWithSocial"}
+    %p Cool, here's how this works:
+    %ol
+      %li Post about Standard Notes on your Twitter, Facebook, or other social network/blog.
+      %li Email hello@standardnotes.org with a link to your post.
+      %li We'll activate your account within 24 hours.
 
   %hr
   %p
