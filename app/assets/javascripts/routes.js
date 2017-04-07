@@ -141,6 +141,7 @@ angular.module('app.main')
       })
 
       .state('extended', {
+        parent: 'base',
         url: '/extended',
         views: {
           'content@' : {
