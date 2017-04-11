@@ -40,9 +40,9 @@ class ExtensionsCtrl {
       },
       {
         name: "Dark Blue",
-        desc: "A night time theme for Standard Notes Desktop.",
+        desc: "A night theme for Standard Notes Desktop and Web.",
         sref: "extensions.themes",
-        types: ["Desktop Theme"]
+        types: ["Theme"]
       }
     ]
 
