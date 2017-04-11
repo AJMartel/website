@@ -9,6 +9,12 @@ class ExtensionsCtrl {
         types: ["Standard File Extension"]
       },
       {
+        name: "Google Drive Sync",
+        desc: "Allows you to sync your tags and notes to Google Drive for added redundancy.",
+        href: window._ext_server + "/gdrive",
+        types: ["Standard File Extension"]
+      },
+      {
         name: "File Attachments",
         desc: "An extension that allows you to attach files to your notes.",
         sref: "extensions.file_attacher",
