@@ -1,14 +1,12 @@
 %section
-  .tagline A good place for your notes. Standard Notes is the future of what a notes app might look like.
+  %blockquote
+    What I write is important to me. I want to be able to read it fifty years from now. A hundred years from now. So where do I go? Evernote? Google? Other private, short-lived, growth-oriented companies? No. What we need is something that
+    %strong focuses
+    on durability and
+    %strong not
+    growth.
 
-  .features
-    %p End-to-end encryption
-    %p Custom editors and extensions
-    %p Cross-platform applications and sync
-    %p Data ownership by default
-    %p Architecture and design that maximize longevity and sustainability
-
-  %h3{"style" => "margin-top: 30px; font-size: 22px;"} It's available for free on:
+  %h3{"style" => "margin-top: 30px; font-size: 22px;"} Available for free on:
   .downloads-container.mt-20
     .download-item{"ng-repeat" => "item in downloads"}
       %a.content-link{"href" => "{{item.link}}", "target" => "_blank"}
@@ -17,22 +15,51 @@
         .links
           %a.link{"href" => "{{item.link}}", "target" => "_blank"} {{item.name}}
 
-  %h2.mt-40 We're built on different principles:
+  %p Standard Notes is a basic notes app that delivers only the essentials in note taking. We believe:
   .principles.mt-30
     %ol
       %li
         %strong Complexity in software decreases its chances of survival.
-        Notes are the most important part of our existence.
-        They should last as long as we do. We favor longevity and sustainability over excessive features and endless growth.
+        How often are you forced to switch to a new system every time developers of your favorite app decide to change everything around or just completely abandon the project? Applications that aim to survive an apocalypse must adapt to a different lifestyle.
+        We follow principles that maximize longevity, not growth, period.
       %li
-        %strong A notes app should be customizable.
-        It is not possible for one notes app to anticipate everyone's needs and wants.
-        Our applications start simple, and can be extended with 3rd party extensions and editors that allow you to choose how you'd like to write.
+        %strong Your notes belong to you, and should not be read by anyone but you.
+        Information is valuable. When private companies own your un-encrypted data, they'll find any way they can to monetize it, even at the expense of your privacy.
+        With Standard Notes, all your notes are encrypted
+        on your device before being sent over the wire. This means that even if the server was hacked and all your data was stolen, the attacker would only see gibberish—only you can decrypt your notes.
       %li
         %strong A notes company does not need to meddle with my data to provide me with a notes service.
         We believe in a separation of concerns between our service and your data. That's why we built Standard File, a simple data format and storage method
-        that encrypts and backs up your data to multiple locations, and also offers extensions.
+        that encrypts and backs up your data.
+      %li
+        And finally,
+        %strong a notes app should be customizable.
+        It is not possible for one notes app to anticipate everyone's needs and wants.
+        Our applications start simple, and can be extended with 3rd party extensions and editors that allow you to choose how you'd like to write.
 
+  -# %h2.mt-40 We're built on different principles:
+  -# .principles.mt-30
+  -#   %ol
+  -#     %li
+  -#       %strong Complexity in software decreases its chances of survival.
+  -#       Notes are the most important part of our existence.
+  -#       They should last as long as we do. We favor longevity and sustainability over excessive features and endless growth.
+  -#     %li
+  -#       %strong A notes app should be customizable.
+  -#       It is not possible for one notes app to anticipate everyone's needs and wants.
+  -#       Our applications start simple, and can be extended with 3rd party extensions and editors that allow you to choose how you'd like to write.
+  -#     %li
+  -#       %strong A notes company does not need to meddle with my data to provide me with a notes service.
+  -#       We believe in a separation of concerns between our service and your data. That's why we built Standard File, a simple data format and storage method
+  -#       that encrypts and backs up your data to multiple locations, and also offers extensions.
+
+  -# %p Where other notes apps focus on excessive features and endless growth, we focus on making an app that doesn't implode from its own complexity.
+  -# %p Notes are some of the most important byproducts of our existence, and we should be able to read them fifty years from now.
+  -# %p But when you entrust growth-minded companies with your notes, you can't always tell how long they'll stick around, or in what ways they'll attempt to make money off you in the future.
+  -# %p We focus on creating the simplest form of a notes app, making it easy to maintain and support in the long run. It also has the added effect that a lot of users notice quickly: "it just works".
+
+
+  %hr
 
   %h3
     Want to try it out?
@@ -112,7 +139,7 @@
     %li
       %strong How does Standard Notes make money?
       %p
-        We currently offer the
+        We offer the
         %a{"href" => "/extended"} Standard Notes Extended
         subscription, which provides members with benefits such as Advanced Extensions (like the Note History extension and the Advanced Markdown Editor) and priority support with setting up a personal Standard Notes/Standard File server or Standard Notes based personal blog.
 
