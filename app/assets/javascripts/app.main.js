@@ -2,7 +2,9 @@
 
 angular.module('app.main', [
   'ui.router',
-  'restangular'
+  'restangular',
+  'angulartics',
+  'angulartics.piwik'
 ])
 
 .config(function (RestangularProvider) {
