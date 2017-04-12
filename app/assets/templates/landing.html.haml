@@ -6,7 +6,11 @@
     %strong not
     growth.
 
-  %h3{"style" => "margin-top: 30px; font-size: 22px;"} Available for free on:
+  %p.mt-30
+    %strong Standard Notes
+    is a simple notes app that delivers only the essentials in note-taking. It's fast, available on almost every platform, supports strong encryption, privacy, and security, gives you 100% data ownership, is open-source, and supports custom extensions like Markdown and Dropbox Sync.
+
+  %h3{"style" => "margin-top: 30px; font-size: 22px;"} It's available for free on:
   .downloads-container.mt-20
     .download-item{"ng-repeat" => "item in downloads"}
       %a.content-link{"href" => "{{item.link}}", "target" => "_blank"}
@@ -15,7 +19,7 @@
         .links
           %a.link{"href" => "{{item.link}}", "target" => "_blank"} {{item.name}}
 
-  %p Standard Notes is a basic notes app that delivers only the essentials in note taking. We believe:
+  %p.bold We're built on different principles.
   .principles.mt-30
     %ol
       %li
@@ -32,8 +36,7 @@
         We believe in a separation of concerns between our service and your data. That's why we built Standard File, a simple and open data format
         that encrypts and backs up your data.
       %li
-        And finally,
-        %strong a notes app should be customizable.
+        %strong A notes app should be customizable.
         It is not possible for one notes app to anticipate everyone's needs and wants.
         Our applications start simple, and can be extended with 3rd party extensions and editors that allow you to choose how you'd like to write.
 
@@ -123,10 +126,6 @@
         We offer the
         %a{"href" => "/extended"} Standard Notes Extended
         subscription, which provides members with benefits such as Advanced Extensions (like the Note History extension and the Advanced Markdown Editor) and priority support with setting up a personal Standard Notes/Standard File server or Standard Notes based personal blog.
-
-    %li
-      %strong How do you know you'll be here for a while?
-      %p Software is difficult to maintain due to an endlessly growing feature set that constantly introduces bugs and stability issues. Because we're "freezing" our feature set as-is, only minimal maintenance work is required every year. While this is still work, it's far more manageable than typical software projects that aim to grow and grow every year. We're also not interested in "scaling", so our costs will remain low, allowing us to sustain these applications for an extended period of time, if not indefinitely.
 
     %li
       %strong How can I get involved?
