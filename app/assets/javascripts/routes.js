@@ -110,6 +110,18 @@ angular.module('app.main')
         }
       })
 
+      .state('extensions.min_markdown', {
+        url: '/minimal-markdown',
+        views: {
+          'content@' : {
+            templateUrl: 'templates/extensions/min_markdown_editor.html',
+            controller: function($scope){
+              $scope.iframeURL = window._ext_server + "/editors/min_markdown_demo";
+            }
+          }
+        }
+      })
+
       .state('extensions.collab', {
         url: '/collaborative-editor',
         views: {

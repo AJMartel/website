@@ -65,6 +65,12 @@ class ExtensionsCtrl {
         desc: "Ideal for code snippets and other useful functions that you want to hold on to in your notes.",
         sref: "extensions.code_editor",
         types: ["Standard Notes Extension"]
+      },
+      {
+        name: "Minimal Markdown Editor",
+        desc: "A minimal Markdown editor with inline style support.",
+        sref: "extensions.min_markdown",
+        types: ["Standard Notes Extension"]
       }
     ]
 
