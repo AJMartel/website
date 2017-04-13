@@ -19,6 +19,12 @@ class ProDashboardCtrl {
             desc: "A powerful code editor with support for over 120 programming languages.",
             editor: true,
             url: $scope.user.extension_server_url + "/editors/code?name=Code"
+          },
+          {
+            name: "Minimal Markdown Editor",
+            desc: "A minimal Markdown editor with inline style support.",
+            editor: true,
+            url: $scope.user.extension_server_url + "/editors/min_markdown?name=Minimal Markdown"
           }
       ]
     }
