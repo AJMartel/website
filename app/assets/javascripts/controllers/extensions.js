@@ -32,16 +32,16 @@ class ExtensionsCtrl {
       {
         name: "Dropbox Sync",
         desc: "Automatically syncs your tags and notes to your Dropbox for added redundancy.",
-        // href: window._ext_server + "/dropbox",
         types: ["Sync Adapter"],
-        cta: null
+        sref: "extended",
+        cta: "Get"
       },
       {
         name: "Google Drive Sync",
         desc: "Automatically syncs your tags and notes to your Google Drive for added redundancy.",
-        // href: window._ext_server + "/gdrive",
         types: ["Sync Adapter"],
-        cta: null
+        sref: "extended",
+        cta: "Get"
       },
       {
         name: "Note History",
