@@ -3,29 +3,45 @@ class ProDashboardCtrl {
 
     $scope.buildExtensions = function() {
       $scope.extensions = [
-          {
-            name: "Note History",
-            desc: "Track changes to your notes and restore to previous versions.",
-            url: $scope.user.extension_server_url + "/revisions"
-          },
-          {
-            name: "Advanced Markdown Editor",
-            desc: "An advanced Markdown editor with live preview, editor toolbar, and split pane support.",
-            editor: true,
-            url: $scope.user.extension_server_url + "/editors/advanced_markdown?name=Advanced Markdown"
-          },
-          {
-            name: "Code Editor",
-            desc: "A powerful code editor with support for over 120 programming languages.",
-            editor: true,
-            url: $scope.user.extension_server_url + "/editors/code?name=Code"
-          },
-          {
-            name: "Minimal Markdown Editor",
-            desc: "A minimal Markdown editor with inline style support.",
-            editor: true,
-            url: $scope.user.extension_server_url + "/editors/min_markdown?name=Minimal Markdown"
-          }
+        {
+          name: "Dropbox Sync Adapter",
+          desc: "Sync your tags and notes to Dropbox for added redundancy.",
+          url: $scope.user.extension_server_url + "/dropbox"
+        },
+        {
+          name: "Google Drive Sync Adapter",
+          desc: "Sync your tags and notes to Google Drive for added redundancy.",
+          url: $scope.user.extension_server_url + "/gdrive"
+        },
+        {
+          name: "Note History",
+          desc: "Track changes to your notes and restore to previous versions.",
+          url: $scope.user.extension_server_url + "/revisions"
+        },
+        {
+          name: "Advanced Markdown Editor",
+          desc: "An advanced Markdown editor with live preview, editor toolbar, and split pane support.",
+          editor: true,
+          url: $scope.user.extension_server_url + "/editors/advanced_markdown?name=Advanced Markdown"
+        },
+        {
+          name: "Code Editor",
+          desc: "A powerful code editor with support for over 120 programming languages.",
+          editor: true,
+          url: $scope.user.extension_server_url + "/editors/code?name=Code"
+        },
+        {
+          name: "Minimal Markdown Editor",
+          desc: "A minimal Markdown editor with inline style support.",
+          editor: true,
+          url: $scope.user.extension_server_url + "/editors/min_markdown?name=Minimal Markdown"
+        },
+        {
+          name: "Midnight Theme",
+          desc: "A night theme for Standard Notes Desktop and Web.",
+          theme: true,
+          url: $scope.user.extension_server_url + "/themes/midnight"
+        }
       ]
     }
 

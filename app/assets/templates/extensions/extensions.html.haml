@@ -1,10 +1,8 @@
 .main-content
-  %h1 Extensions
 
   %p Extensions allow you to plug 3rd party services into your Standard Notes experience.
 
-  %hr
-  %h2 Standard Extensions
+  %h2 Free Extensions
   .col-container{"style" => "display: flex; flex-wrap: wrap;"}
     .white-bg.col-45.mb-10.mr-10.inline.large-padding.relative{"ng-repeat" => "ext in freeExtensions", "style" => "min-height: 200px; flex: 1 0 auto; min-width: 250px; max-width: 410px;"}
       %h3.name.bold.no-margin {{ext.name}}
@@ -14,42 +12,26 @@
       %a.absolute{"ng-if" => "ext.sref", "ui-sref" => "{{ext.sref}}", "style" => "bottom: 12px;"} Get
       %a.absolute{"ng-if" => "ext.href", "href" => "{{ext.href}}", "style" => "bottom: 12px;"} Get
 
-  %hr
-  %h2 Advanced Extensions
+  %h2 Pro Extensions
   %p
-    Advanced extensions are available as part of the
+    Pro extensions are available as part of the
     %a{"ui-sref" => "extended"} Standard Notes Extended
-    subscription.
+    program.
   .col-container{"style" => "display: flex; flex-wrap: wrap;"}
     .white-bg.col-45.mb-10.mr-10.inline.large-padding.relative{"ng-repeat" => "ext in proExtensions", "style" => "min-height: 200px; flex: 1 0 auto; min-width: 250px; max-width: 410px;"}
       %h3.name.bold.no-margin {{ext.name}}
       .faded{"ng-repeat" => "type in ext.types", "style" => "margin-top: -1px;"}
         {{type}}
       %p {{ext.desc}}
-      %a.absolute{"ng-if" => "ext.sref", "ui-sref" => "{{ext.sref}}", "style" => "bottom: 12px;"} Get
-      %a.absolute{"ng-if" => "ext.href", "href" => "{{ext.href}}", "style" => "bottom: 12px;"} Get
+      %a.absolute{"ng-if" => "ext.sref", "ui-sref" => "{{ext.sref}}", "style" => "bottom: 12px;"} {{ext.cta}}
+      %a.absolute{"ng-if" => "ext.href", "href" => "{{ext.href}}", "style" => "bottom: 12px;"} {{ext.cta}}
 
+  %hr
   %h2 Import Tools
   %p
     For importing from Evernote and other services, see the
     %a{"ui-sref" => "tools"} Tools page.
 
-  %hr
-  %h2 About Extensions
-  %p
-    Because our focus is making your data survive for as long as possible, we had to design our system differently.
-    We aim to keep a separation of concerns between your data and our notes app. Your data is owned by you, not us, on your Standard File account.
-
-  %p Both Standard Notes and Standard File have their own extensions.
-
-  %p
-    %strong Standard Notes extensions
-    are related to how you interact with the Standard Notes app. These are primarly extensions that you can <em>see</em>. The main types of extensions here are menu-based and custom editors.
-  %p
-    %strong Standard File extensions
-    are related to your data, and where it is backed up or stored. These are extensions that operate behind the scenes, without you needing to think about them. These include things like 3rd-party sync, or managing revision history for your data.
-
-  %p Standard Notes extensions are registered using the main application, while Standard File extensions are registered using your Standard File dashboard, which you can access through the "Account" panel in the Standard Notes app.
   .mt-50
     %hr
     %p
