@@ -17,6 +17,9 @@
   %p.bold.mt-50 Extended is offered on the pay-as-you-feel principle.
   %p This allows us to offer Extended to many people with varying financial situations.
   %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 5", "ng-value" => "5", "ng-change" => "presetAmountSelected()"}
+    $5
+  %label.mr-10
     %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 10", "ng-value" => "10", "ng-change" => "presetAmountSelected()"}
     $10
   %label.mr-10
