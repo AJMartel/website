@@ -1,0 +1,40 @@
+.header {
+  margin-bottom: 50px !important;
+  padding-bottom: 0 !important;
+  
+
+  @include MQ-SmallAndLess() {
+    margin-bottom: 20px !important;
+  }
+
+  h1 {
+    border-bottom: 0;
+    font-size: 34px;
+    margin: 0;
+    a {
+      color: black;
+    }
+  }
+
+  .header-links {
+    float: right;
+    padding-top: 15px;
+
+    @include MQ-Small() {
+      float: none;
+      clear: left;
+      padding-top: 0px;
+    }
+
+    @include MQ-Xsmall() {
+      float: none;
+      clear: left;
+      padding-top: 0px;
+    }
+
+  }
+
+  .header-link {
+    margin-right: 10px;
+  }
+}

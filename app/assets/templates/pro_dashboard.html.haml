@@ -1,0 +1,40 @@
+%section.main-content
+  %h1 Standard Notes Extended — Dashboard
+  %em Signed in as {{user.email}}
+  %hr
+
+  %h1 Pro Extensions
+  %div.white-bg.large-padding.mt-10{"ng-repeat" => "ext in extensions"}
+    %p.bold {{ext.name}}
+    %p {{ext.desc}}
+    %div{"ng-if" => "ext.editor"}
+      %p.bold To install this editor, copy the following URL and paste it into your Standard Notes app under "Editors":
+      %p.wrap {{ext.url}}
+    %div{"ng-if" => "ext.theme"}
+      %p.bold To install this theme, copy the following URL and paste it into your Standard Notes app in the "Themes" section of the "Extensions" menu:
+      %p.wrap {{ext.url}}
+    %a.block{"ng-if" => "!ext.editor && !ext.theme", "href" => "{{ext.url}}", "target" => "_blank"} Configure
+
+  %hr
+  %h2 Producer Credit
+  %p
+    Thank you for your support. By purchasing an Extended subscription, you're helping support Standard Note's
+    mission for privacy and longevity in software.
+
+    We'd like to mention you in our credits. We'll add your name and a website of your choosing to the page.
+    %form
+      %input.form-control{"type" => "text", "ng-model" => "user.name", "placeholder" => "Your name"}
+      %input.form-control{"type" => "text", "ng-model" => "user.website", "placeholder" => "Your website/twitter"}
+      %button.black.inline{"ng-click" => "submitInfoForm()"} Submit
+    %p{"ng-if" => "infoFormData.success"} Your information has been successfully updated. Please allow a few days for credits change.
+    %p.red{"ng-if" => "infoFormData.error"} There was an error saving your info. Please try again.
+
+
+  %hr
+  %h2 Support
+  %p
+    For help with setting up your own private Standard Notes or Standard File server, send an email  to
+    %a{"href" => "mailto:extended@standardnotes.org"} extended@standardnotes.org.
+    We'll help you get started and offer guidance every step of the way.
+  %p
+    %em (Make sure you send the email from the account associated with your Extended account.)

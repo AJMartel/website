@@ -1,0 +1,76 @@
+%section.main-content
+  %h1 Extended Subscription Package
+  %p Standard Notes Extended is an optional subscription package that extends Standard Notes functionality with more advanced extensions, and helps Standard Notes sustain for the long run.
+  %p.bold Benefits:
+  %ul
+    %li
+      Access to all Pro extensions, current and future, for 1 year. When the year is up, you can choose to come back and renew with whatever price you choose.
+      %a{"ui-sref" => "extensions"} (See full extension list here)
+    %li
+      Priority support, including 1-on-1 technical assistance with setting up your own Standard Notes/Standard File server (for maximum privacy)
+      and help with setting up your own
+      %a{"href" => "https://github.com/standardnotes/standard-journal"} Standard Journal blog,
+      which you publish to directly from Standard Notes.
+    %li
+      Support Standard Notes' mission for privacy and longevity in software. You'll receive a mention in the credits section of our homepage for your contribution.
+
+  %p.bold.mt-50 Extended is offered on the pay-as-you-feel principle.
+  %p This allows us to offer Extended to many people with varying financial situations.
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 5", "ng-value" => "5", "ng-change" => "presetAmountSelected()"}
+    $5
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 10", "ng-value" => "10", "ng-change" => "presetAmountSelected()"}
+    $10
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 15", "ng-value" => "15", "ng-change" => "presetAmountSelected()"}
+    $15
+  %label.mr-10
+    %input{"type" => "radio", "ng-model" => "formData.payAmount", "ng-checked" => "formData.payAmount == 30", "ng-value" => "30", "ng-change" => "presetAmountSelected()"}
+    $30 (recommended)
+  %label.mr-10
+    %input{"type" => "radio", "ng-checked" => "formData.payOtherAmount"}
+    Other
+    %input.form-control{"type" => "number", "placeholder" => "$", "ng-model" => "formData.payOtherAmount", "ng-change" => "formData.payAmount = 0"}
+
+  %button.black.inline.mt-10{"ng-click" => "formData.showEmailForm = true", "ng-if" => "!formData.showEmailForm"} Subscribe
+  %a{"ng-if" => "!formData.showEmailForm", "ng-click" => "formData.showEmailForm = true", "style" => "margin-left: 10px; cursor: pointer;"} Login
+
+  .mt-10{"ng-if" => "formData.showEmailForm"}
+    %input.form-control.inline.top{"type" => "email", "ng-model" => "formData.email", "placeholder" => "Enter your email address", "style" => "height: 39px;"}
+    %button.black.inline.top{"ng-click" => "submitEmail()"} Continue
+
+  .mt-10{"ng-if" => "formData.processing"} Processing...
+  .mt-10.bold{"ng-if" => "formData.success"} Success! Welcome to Standard Notes Extended. Redirecting...
+  .mt-10.red{"ng-if" => "formData.error"} {{formData.error.message}}
+  .mt-10{"ng-if" => "formData.registrationResponse"} {{formData.registrationResponse}}
+
+  %p
+    %em Credit cards and Bitcoin accepted. Powered by Stripe.
+
+  %p.bold.mt-50 How it works:
+  %p
+    Your Extended account is separate from the account you use on Standard Notes. When you subscribe above, you'll enter your email address.
+    This email does not need to be the same as your Standard Notes email.
+  %p
+    After successful payment, you'll receive a login link that will take you to your Extended dashboard,
+    where you'll gain access to all the advanced extensions and other features. If you've already subscribed to Extended, simply press "Login" above to receive your login link via email.
+
+
+  %hr
+  %p.bold Pay with Social Post
+  %p
+    If you don't have any financial means, you can help support the project by posting about it on Twitter, Facebook, or other social networks. In exchange, you'll receive 3 months of access to Extended.
+    You should have at least 200 followers/friends.
+  %a.block{"ng-if" => "!formData.payWithSocial", "ng-click" => "formData.payWithSocial = true", "href" => "#"} Pay with Social Post
+  %div{"ng-if" => "formData.payWithSocial"}
+    %p Cool, here's how this works:
+    %ol
+      %li Post about Standard Notes on your Twitter, Facebook, or other social network/blog.
+      %li Email hello@standardnotes.org with a link to your post.
+      %li We'll activate your account within 24 hours.
+
+  %hr
+  %p
+    Questions? Email us at
+    %a{"href" => "mailto:hello@standardnotes.org?subject=Question about Extended"} hello@standardnotes.org

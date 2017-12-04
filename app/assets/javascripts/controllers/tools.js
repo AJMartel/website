@@ -7,13 +7,32 @@ class ToolsCtrl {
 
       reader.onload = function(e) {
         var data = e.target.result;
-        var sndata = SNTools.convertENEXDatatoSN(data);
-        SNTools.downloadSNData(sndata, "evernote-to-sn.txt");
-        $timeout(function(){
-          $scope.evernoteConversionComplete = true;
-        })
+        try {
+          var sndata = SNTools.convertENEXDatatoSN(data);
+          SNTools.downloadSNData(sndata, "evernote-to-sn.txt");
+          $timeout(function(){
+            $scope.evernoteConversionComplete = true;
+          })
+        } catch (e) {
+          console.log("Error: ", e);
+          alert("There was an error processing your file. Please submit your console output to hello@standardnotes.org.");
+        }
       }
       reader.readAsText(file);
+    }
+
+    $scope.importPlaintextSelected = function(files) {
+      try {
+        SNTools.convertPlaintextFiles(files, function(data){
+          SNTools.downloadSNData(data, "sn-import-file.txt");
+          $timeout(function(){
+            $scope.plaintextConversionComplete = true;
+          })
+        })
+      } catch (e) {
+        console.log("Error: ", e);
+        alert("There was an error processing your file. Please submit your console output to hello@standardnotes.org.");
+      }
     }
 
   }

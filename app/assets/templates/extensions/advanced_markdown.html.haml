@@ -1,0 +1,21 @@
+%section.main-content
+  %h1 Advanced Markdown Editor
+  %p
+    The Advanced Markdown Editor is a fully featured Markdown editor for
+    %a{"href" => "/"} Standard Notes
+    that supports live preview, a styling toolbar, and split pane support.
+
+  %p
+    This editor is available to
+    %a{"ui-sref" => "extended"} Standard Notes Extended
+    subscribers.
+
+  %h2 Demo
+  %iframe.shadow-image{"width" => "100%",  "ng-src" => "{{iframeURL | trusted}}", "frameBorder" => "0", "style" => "width: 86vw; min-height: 750px; height: auto;"}
+
+  %h2 Screenshots
+  %img.shadow-image.mt-10{"src" => "assets/advanced-markdown-1.png"}
+  %em.block.mt-10 Live render functionality previews Markdown inline while you type.
+
+  %img.mt-20.shadow-image{"src" => "assets/advanced-markdown-2.jpg"}
+  %em.block.mt-10 Split pane support allows you to see the finished product.
